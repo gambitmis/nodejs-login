@@ -1,8 +1,10 @@
 version: '3'
 services:
-    backend-dev:
+    backend:
+        build: 
+            context: ./backend
+            dockerfile: dockerfile.dev
         restart: unless-stopped
-        build: ./backend/dev
         ports:
             - "3001:3001"
 networks:
