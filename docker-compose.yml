@@ -1,0 +1,11 @@
+version: '3'
+services:
+    backend-dev:
+        restart: unless-stopped
+        build: ./backend/dev
+        ports:
+            - "3001:3001"
+networks:
+    default:
+        external: true
+        name: tuxtum
