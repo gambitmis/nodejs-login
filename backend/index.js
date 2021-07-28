@@ -132,6 +132,10 @@ app.get('/logout', (req, res) => {
   req.session = null;
   res.redirect('/');
 })
+
+app.use('/', (req,res) => {
+  res.status(404).send('<h1>404 Page not Found</h1>')
+})
 app.listen(port, () => {
   console.log(`listen on port ${port}`)
 })
