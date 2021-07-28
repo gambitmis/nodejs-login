@@ -4,11 +4,13 @@ RUN apk add --no-cache git
 
 RUN git clone https://github.com/gambitmis/nodejs-login-example1.git
 
-WORKDIR /nodejs-login-example1
+WORKDIR /nodejs-login-example1/backend
 
 RUN npm init -y
 
 RUN npm install bcrypt cookie-session ejs express express-validator mysql2 nodemon
+
+RUN npm install
 
 EXPOSE 3001
 
