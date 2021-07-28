@@ -5,6 +5,8 @@ services:
             context: ./backend
             dockerfile: dockerfile.dev
         restart: unless-stopped
+        stdin_open: true
+        tty: true
         ports:
             - "3001:3001"
     db:

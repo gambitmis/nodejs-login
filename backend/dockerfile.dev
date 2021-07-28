@@ -12,4 +12,4 @@ RUN npm install bcrypt cookie-session ejs express express-validator mysql2 nodem
 
 EXPOSE 3001
 
-CMD [ "node" , "backend/index.js" ] 
+CMD [ "sh" ]
