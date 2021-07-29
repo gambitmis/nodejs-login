@@ -6,7 +6,7 @@ const dbConnection = require('./database');
 const { body, validationResult, Result } = require('express-validator');
 
 const app = express()
-const port = 3000
+const port = 3001
 
 app.use(express.urlencoded({ extended: false }))
 

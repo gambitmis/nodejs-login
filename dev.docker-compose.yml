@@ -3,17 +3,14 @@ services:
     backend:
         build: 
             context: ./backend
-            dockerfile: dockerfile.prod
+            dockerfile: dockerfile.dev
         restart: unless-stopped
         stdin_open: true
         tty: true
         ports:
             - "3001:3001"
     db:
-        build:
-            context: ./mariadb
-            dockerfile: dockerfile
-#        image: mariadb
+        image: mariadb
         restart: unless-stopped
         command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
         environment:
@@ -23,7 +20,7 @@ services:
             MARIADB_DATABASE: login
         volumes:
             - db_data:/var/lib/mysql
- #           - ./mariadb/dump:/docker-entrypoint-initdb.d
+            - ./mariadb/dump:/docker-entrypoint-initdb.d
         expose:
             - "3306"
     phpmyadmin:
