@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
+const morgan = require('morgan');
 const dbConnection = require('./database');
 const { body, validationResult, Result } = require('express-validator');
 
 const app = express()
 const port = 3001
 
+app.use(morgan('combined'));
 app.use(express.urlencoded({ extended: false }))
 
 app.set('views', path.join(__dirname,'views'));
